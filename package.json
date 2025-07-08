@@ -6,22 +6,34 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.3.5"
+    "@tanstack/react-query": "^5.81.5",
+    "axios": "^1.10.0",
+    "next": "15.3.5",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
+    "@testing-library/jest-dom": "^6",
+    "@testing-library/react": "^14",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@types/jest": "^29",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
     "eslint": "^9",
     "eslint-config-next": "15.3.5",
-    "@eslint/eslintrc": "^3"
+    "jest": "^29",
+    "jest-environment-jsdom": "^29",
+    "msw": "^2",
+    "tailwindcss": "^4",
+    "ts-jest": "^29",
+    "typescript": "^5",
+    "whatwg-fetch": "^3"
   }
 }
