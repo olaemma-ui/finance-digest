@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import NewsCard from "../NewsCard";
+import NewsCard from "../app/_components/NewsCard";
 import { NewsItem } from "@/types/news";
 
 const mockNews: NewsItem = {
@@ -19,7 +19,7 @@ describe("<NewsCard />", () => {
         render(<NewsCard item={mockNews} />);
 
         expect(screen.getByText("Mock Headline")).toBeInTheDocument();
-        expect(screen.getByText("MockSource")).toBeInTheDocument();
+        expect(screen.getByText((text) => text.includes("MockSource"))).toBeInTheDocument();
         expect(screen.getByRole("link")).toHaveAttribute("href", mockNews.url);
     });
 });

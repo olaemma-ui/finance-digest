@@ -1,8 +1,17 @@
 import { rest } from "msw";
 
+/**
+ *  Handle ANY host + ANY query string that ends with “/news”.
+ *  Examples that will be matched automatically:
+ *    • http://localhost/news?category=general
+ *    • https://finnhub.io/api/v1/news?category=general&token=xxx
+ */
 export const handlers = [
-    rest.get("https://finnhub.io/api/v1/news", (req, res, ctx) =>
-        res(
+    rest.get(/\/news$/, (_req, res, ctx) => {
+
+        console.log("🔥 MSW caught request to:", _req.url.href);
+
+        return res(
             ctx.status(200),
             ctx.json([
                 {
@@ -14,9 +23,10 @@ export const handlers = [
                     url: "https://example.com",
                     category: "general",
                     related: "",
-                    summary: "" 
+                    summary: ""
                 }
             ])
         )
+    }
     )
 ];

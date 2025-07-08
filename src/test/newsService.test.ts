@@ -1,5 +1,5 @@
 import axios from "@/lib/axios";
-import { getGeneralNews } from "./newsService";
+import { getGeneralNews } from "../services/newsService";
 
 jest.mock("@/lib/axios");
 const mockedAxios = axios as jest.Mocked<typeof axios>;
